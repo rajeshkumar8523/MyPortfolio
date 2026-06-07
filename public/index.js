@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
     document.getElementById("splash").style.opacity = "0";
     document.getElementById("splash").style.visibility = "hidden";
     document.body.style.overflow = "auto";
-  }, 2000);
+  }, 1500);
 });
 
 // Infinite repeating typing effect
@@ -263,6 +263,8 @@ document.querySelectorAll(".navbar a").forEach((link) => {
   });
 });
 
+
+//model popup 
 function showModal(type) {
   const modal = document.getElementById("modal");
   const modalImg = document.getElementById("modal-img");
@@ -274,15 +276,18 @@ function showModal(type) {
     "cognifyz-certificate": "cognifyz-certificate.png",
   };
 
-  if (images[type]) {
-    modalImg.src = images[type];
-    modal.classList.remove("hidden");
-  }
+  modalImg.src = images[type];
+  modal.classList.remove("hidden");
+
+  document.body.style.overflow = "hidden";
 }
 
 function closeModal() {
   document.getElementById("modal").classList.add("hidden");
+  document.body.style.overflow = "auto";
 }
+document.body.appendChild(document.getElementById("modal"));
+
 
 const observer = new IntersectionObserver(
   (entries) => {

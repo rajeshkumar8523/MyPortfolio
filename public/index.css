@@ -148,7 +148,9 @@ body {
     -webkit-backdrop-filter: blur(12px);
     flex-direction: column;
     padding: 80px 30px 30px;
-    transition: right 0.5s ease;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateX(100%);
+    right: 0;
     z-index: 1000;
     margin-right: 0;
     margin-top: 0;
@@ -159,8 +161,7 @@ body {
   }
 
   .navbar.active {
-    right: 0;
-    /* Slide in from right */
+    transform: translateX(0);
   }
 
   /* Menu icon positioning */
@@ -178,16 +179,47 @@ body {
     gap: 15px;
     margin-top: 30px;
     align-items: flex-start;
-    /* Align items to left */
     padding-left: 0;
   }
 
-  /* Nav items */
+  /* Nav items - Initial State */
   .navbar ul li {
     width: 100%;
     text-align: left;
     padding: 10px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    /* Fade Left Animation */
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.5s ease;
+  }
+
+  /* When Navbar Opens */
+  .navbar.active ul li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* One-by-One Animation */
+  .navbar.active ul li:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  .navbar.active ul li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+
+  .navbar.active ul li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+  .navbar.active ul li:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+
+  .navbar.active ul li:nth-child(5) {
+    transition-delay: 0.5s;
   }
 
   /* Hamburger icon animation */
@@ -1254,33 +1286,38 @@ h2 {
 }
 
 .modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #1d1e3d;
-  /* semi-transparent black */
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 9999;
+  align-items: center;
+
+  background: #0b0c2a;
+  backdrop-filter: blur(8px);
+
+  z-index: 999999;
+}
+
+.modal.hidden {
+  display: none;
 }
 
 .modal-content {
-  padding: 1rem;
-  border-radius: 1rem;
-  position: relative;
-  max-width: 600px;
+  max-width: 900px;
   width: 90%;
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 20px;
 }
 
 .modal-img {
   width: 100%;
   height: auto;
-  border-radius: 0.75rem;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 .close-btn {
@@ -1976,7 +2013,7 @@ textarea:focus {
     font-size: 20px;
 
     margin: 0 auto;
-    
+
     margin-bottom: 15px;
   }
 
@@ -1990,7 +2027,6 @@ textarea:focus {
     font-size: 14px;
     line-height: 1.5;
     margin: 0 auto;
-     
   }
 
   .contact-boxes {
@@ -2122,7 +2158,7 @@ textarea:focus {
     /* 1 column in contact details */
     padding: 20px 25px;
     max-width: 400px;
-     
+
     font-size: 14px;
   }
 }
@@ -2148,7 +2184,6 @@ textarea:focus {
   color: #1f8ef1; /* change highlight color */
   font-weight: bold;
 }
-
 
 /* ===== SCROLL REVEAL ANIMATION ===== */
 
