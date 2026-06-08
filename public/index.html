@@ -4,6 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Chrome, Edge, Samsung Internet, Brave -->
+  <meta name="theme-color" content="#0b0c2a">
+
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Windows Tiles -->
+  <meta name="msapplication-navbutton-color" content="#0b0c2a">
+  <meta name="msapplication-TileColor" content="#0b0c2a">
   <title>Portfolio - P Rajesh Kumar</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -12,6 +22,8 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 </head>
 
 <body>
@@ -42,7 +54,7 @@
         <li style="--i: 2"><a href="#about">About</a></li>
         <li style="--i: 3"><a href="#education">Education</a></li>
         <li style="--i: 4"><a href="#projects">Projects</a></li>
-        <li style="--i: 5"><a href="#">Contact</a></li>
+        <li style="--i: 5"><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -78,7 +90,7 @@
       </div>
       <div class="about-right">
         <div class="profile-container">
-          <img src="profile1.png" alt="Profile" class="profile-photo" />
+          <img src="me.png" alt="Profile" class="profile-photo" />
         </div>
         <div class="wave-lines">
           <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
@@ -116,6 +128,7 @@
     </div>
   </section>
 
+  <!-- Skills Section -->
   <section id="skils">
     <div class="skills-simple reveal-scale">
       <div class="skills-simple-container">
@@ -212,7 +225,7 @@
               <span class="logo-text">VT</span>
             </div>
             <div class="details">
-              <h3 class="role-name">Web Developer</h3>
+              <h3 class="role-name">Web Developer Intern</h3>
               <a href="https://vspazetechnologies.in" target="_blank" class="company-link">vspazetechnologies.in ·
                 Internship</a>
               <p class="duration">Nov 2024 - Apr 2025 · 6 months</p>
@@ -221,7 +234,7 @@
           </div>
 
           <p class="experience-description">
-            I worked as a Web Developer at VSPAZE TECHNOLOGIES, contributing to multiple live web projects and improving
+            I worked as a Web Developer Intern at VSPAZE TECHNOLOGIES PVT LIMITED, contributing to multiple live web projects and improving
             my skills in front-end and back-end development, responsive design, and performance optimization.
           </p>
 
@@ -238,7 +251,7 @@
               <span class="logo-text">CT</span>
             </div>
             <div class="details">
-              <h3 class="role-name">Web Developer</h3>
+              <h3 class="role-name">Web Developer Intern</h3>
               <a href="https://www.cognifyz.com" target="_blank" class="company-link">cognifyz.com · Internship</a>
               <p class="duration">July 2025 - Aug 2025 · 1 month</p>
               <p class="location">Nagpur, Maharashtra, India · Remote</p>
@@ -246,7 +259,7 @@
           </div>
 
           <p class="experience-description">
-            At Cognifyz Technologies, I undertook an intensive Web Development internship where I honed my skills in
+            At Cognifyz Technologies Pvt Limited, I undertook an intensive Web Development internship where I honed my skills in
             dynamic web applications.
             I create a landing page for a Web Developer Internship using modern front-end frameworks like
             <strong>UIKit</strong>, <strong>Bootstrap</strong>, <strong>Foundation</strong>, and <strong>Bulma</strong>.
@@ -308,15 +321,15 @@
 
 
     <div class="projects-container">
-      <div class="heading">Recent Projects</div>
+      <div class="heading">Live Projects</div>
 
       <div class="project-grid">
         <!-- Project 1 -->
         <div class="project-card reveal-scale">
           <img src="project3.png" alt="Project 1" class="project-image" />
           <div class="project-overlay">
-            <span class="project-category">App Information Website</span>
-            <h3 class="project-title">Blink Bowl</h3>
+            <span class="project-category">Multi Services Website</span>
+            <h3 class="project-title">OZZO</h3>
             <a href="https://blinkbowl.com/" class="project-btn">View Site</a>
           </div>
         </div>
@@ -325,11 +338,31 @@
         <div class="project-card reveal-scale">
           <img src="project1.png" alt="Project 2" class="project-image" />
           <div class="project-overlay">
-            <span class="project-category">Website</span>
+            <span class="project-category">Services Website</span>
             <h3 class="project-title">Akshara Work Groups</h3>
             <a href="https://www.aksharaworkgroups.in/index.html" class="project-btn">View Site</a>
           </div>
         </div>
+
+        <!-- Project 3 -->
+        <div class="project-card reveal-scale">
+          <img src="project4.png" alt="Project 3" class="project-image" />
+          <div class="project-overlay">
+            <span class="project-category">Info Website</span>
+            <h3 class="project-title">Delvonza Exim</h3>
+            <a href="https://www.delvonza.com" class="project-btn">View Site</a>
+          </div>
+        </div>
+
+        <!-- Project 4  
+        <div class="project-card reveal-scale">
+          <img src="project1.png" alt="Project 4" class="project-image" />
+          <div class="project-overlay">
+            <span class="project-category">Services Website</span>
+            <h3 class="project-title">Akshara Work Groups</h3>
+            <a href="https://www.aksharaworkgroups.in/index.html" class="project-btn">View Site</a>
+          </div>
+        </div>-->
       </div>
     </div>
 
@@ -339,7 +372,7 @@
 
   <h2 style="margin-bottom: 5px;">Contact </h2>
   <!-- Contact Section -->
-  <section class="contact-section reveal">
+  <section id="contact" class="contact-section reveal">
 
     <div class="form-card">
       <h3>Leave your message</h3>
@@ -356,7 +389,7 @@
         <!-- Success Message -->
         <div id="successMessage" style="display: none;" class="success-message">
           <i class="fas fa-check-circle success-icon"></i>
-          <p>Message sent successfully!</p>
+          <p>Thank you for your message. I will get back to you soon.</p>
         </div>
 
       </form>
@@ -374,7 +407,7 @@
 
         <div class="contact-boxes">
           <div class="box">
-            <a href="tel:+8555057822" target="_blank">
+            <a href="https://wa.me/917660991425" target="_blank">
               <div class="icon-circle green"><i class="fab fa-whatsapp"></i></div>
               <div class="text">
                 <strong>What's App</strong><br />
@@ -385,7 +418,7 @@
         </div>
 
         <div class="box">
-          <a href="tel:+8555057822">
+          <a href="tel:+91 7660991425">
             <div class="icon-circle orange"><i class="fas fa-phone"></i></div>
             <div class="text">
               <strong>Phone</strong><br />

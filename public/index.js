@@ -1,3 +1,54 @@
+emailjs.init({
+  publicKey: "mW7JfTeibBIqwXrjr",
+});
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const submitBtn = document.querySelector(".btn-primary");
+    const successMessage = document.getElementById("successMessage");
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = "Sending...";
+
+    const templateParams = {
+      from_name: document.getElementById("name").value,
+      from_email: document.getElementById("email").value,
+      subject: document.getElementById("subject").value,
+      message: document.getElementById("message").value,
+    };
+
+    emailjs
+      .send(
+        "service_laul2ul",
+        "template_dve12vq",
+        templateParams
+      )
+      .then(() => {
+        successMessage.style.display = "flex";
+
+        document.getElementById("contactForm").reset();
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "Send Message";
+
+        setTimeout(() => {
+          successMessage.style.display = "none";
+        }, 5000);
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+
+        alert("Failed to send message. Please try again.");
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "Send Message";
+      });
+  });
+
+
+
 // Splash screen timeout
 window.addEventListener("load", () => {
   setTimeout(() => {
@@ -235,8 +286,9 @@ menuIcon.addEventListener("click", () => {
   menuIcon.classList.toggle("active");
   navbar.classList.toggle("active");
 
-  document.body.style.overflow =
-    navbar.classList.contains("active") ? "hidden" : "auto";
+  document.body.style.overflow = navbar.classList.contains("active")
+    ? "hidden"
+    : "auto";
 });
 
 // Close menu when nav link clicked
@@ -247,7 +299,6 @@ document.querySelectorAll(".navbar a").forEach((link) => {
     document.body.style.overflow = "auto";
   });
 });
-
 
 // Close menu when clicking on a link
 document.querySelectorAll(".navbar a").forEach((link) => {
@@ -263,8 +314,7 @@ document.querySelectorAll(".navbar a").forEach((link) => {
   });
 });
 
-
-//model popup 
+//model popup
 function showModal(type) {
   const modal = document.getElementById("modal");
   const modalImg = document.getElementById("modal-img");
@@ -287,7 +337,6 @@ function closeModal() {
   document.body.style.overflow = "auto";
 }
 document.body.appendChild(document.getElementById("modal"));
-
 
 const observer = new IntersectionObserver(
   (entries) => {
